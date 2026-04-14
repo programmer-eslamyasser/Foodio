@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescue Bite – Professional Marketplace</title>
+    <link rel="stylesheet" href="Menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<header>
+    <h1 class="header-title">Surplus Meals Near You</h1> 
+    <button class="cart-trigger" onclick="toggleCart()">
+        🛒 Basket <span id="cart-count" class="cart-badge">0</span>
+    </button>
+</header>
+
+<div class="filters">
+    <button class="filter-btn active" onclick="filterMeals(this, 'all')">All Meals</button>
+    <button class="filter-btn" onclick="filterMeals(this, 'burgers')">🍔 Burgers</button>
+    <button class="filter-btn" onclick="filterMeals(this, 'pizza')">🍕 Pizza</button>
+    <button class="filter-btn" onclick="filterMeals(this, 'asian')">🥡 Asian</button>
+    <button class="filter-btn" onclick="filterMeals(this, 'salads')">🥗 Salads</button>
+    <button class="filter-btn" onclick="filterMeals(this, 'desserts')">🍮 Desserts</button>
+</div>
+
+<main>
+    <div class="meals-grid" id="grid"></div>
+</main>
+
+<div class="cart-dimmer" id="dimmer" onclick="toggleCart()"></div>
+<div class="cart-overlay" id="cart-sidebar">
+    <div class="cart-header-actions">
+        <button onclick="toggleCart()" class="close-cart-btn">✕</button>
+    </div>
+    
+    <div class="cart-title-container">
+        <h2 class="syne-font">Your Items</h2>
+        <button onclick="clearFullCart()" class="empty-cart-btn">
+            Empty Basket 🗑️
+        </button>
+    </div>
+
+    <div id="cart-items-list" class="cart-items-list"></div>
+
+    <div class="cart-footer">
+        <div class="total-container">
+            <span>Total:</span>
+            <span id="final-price">$0.00</span>
+        </div>
+        <button class="reserve-btn checkout-btn" onclick="processCheckout()">Checkout</button>
+    </div>
+</div>
+
+<div id="success-modal" class="modal-wrapper">
+    <div class="modal-content">
+        <div class="success-icon">✓</div>
+        <h2 class="syne-font">Order Confirmed!</h2>
+        <p class="success-text">Your meal is being prepared.</p>
+        <button onclick="closeSuccess()" class="modal-close-btn">Great!</button>
+    </div>
+</div>
+
+<div id="toast" class="toast-notification">Added to Basket! 🛒</div>
+
+<div id="meal-grid" class="meals-grid"></div>
+
+<div class="bottom-button-container">
+    <button class="filter-btn-bottom" onclick="openSidebar()">
+        See All Deals <i class="fas fa-arrow-right"></i>
+    </button>
+</div>
+
+<div id="mySidebar" class="sidebar-container">
+    <div class="sidebar-header">
+        <h3>Filter Deals</h3>
+        <span class="close-btn" onclick="closeSidebar()">&times;</span>
+    </div>
+    
+    <div class="sidebar-body">
+        <div class="filter-section">
+            <h4>CATEGORY</h4>
+            <label><input type="checkbox" checked> <span>All</span></label>
+            <label><input type="checkbox"> 🍔 <span>Burgers</span></label>
+            <label><input type="checkbox"> 🍕 <span>Pizza</span></label>
+            <label><input type="checkbox"> 🍜 <span>Asian</span></label>
+            <label><input type="checkbox"> 🥗 <span>Salads</span></label>
+            <label><input type="checkbox"> 🍰 <span>Desserts</span></label>
+        </div>
+
+        <div class="filter-section">
+            <h4>TIME LEFT</h4>
+            <label><input type="radio" name="time" checked> <span>Any</span></label>
+            <label><input type="radio" name="time"> <span>Under 15 min</span></label>
+            <label><input type="radio" name="time"> <span>Under 30 min</span></label>
+            <label><input type="radio" name="time"> <span>Under 1 hour</span></label>
+        </div>
+
+        <div class="filter-section">
+            <h4>MAX PRICE</h4>
+            <input type="range" min="1" max="15" value="5" class="price-slider">
+            <div class="price-labels">
+                <span>$1</span>
+                <span>$15</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="overlay" class="overlay-bg" onclick="closeSidebar()"></div>
+
+<script src="Menu.js"></script>
+</body>
+</html>
