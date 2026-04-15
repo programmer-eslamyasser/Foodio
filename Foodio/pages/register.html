@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Foodio</title>
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body>
+
+    <div class="auth-card">
+        <div class="logo">🍱 Foodio</div>
+        
+        <div class="header">
+            <h1>Create an account</h1>
+            <p>Enter your details to get started</p>
+        </div>
+
+        <div id="alert-box" class="alert hidden"></div>
+
+        <form id="registerForm" novalidate>
+            <div class="form-row">
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" id="username" placeholder="Please enter your name">
+                    <span class="err-msg" id="name-err"></span>
+                </div>
+                <div class="field">
+                    <label>Phone Number</label>
+                    <input type="text" id="phone" placeholder="+20123456789">
+                    <span class="err-msg" id="phone-err"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Email Address</label>
+                <input type="email" id="regEmail" placeholder="example@gmail.com">
+                <span class="err-msg" id="email-err"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="field">
+                    <label>Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="regPassword" placeholder="Please enter a strong password">
+                        <button type="button" class="toggle-pw" onclick="togglePasswordField('regPassword')">👁</button>
+                    </div>
+                    <span class="err-msg" id="pass-err"></span>
+                </div>
+                <div class="field">
+                    <label>Confirm Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="confirmPassword" placeholder="Repeat password">
+                        <button type="button" class="toggle-pw" onclick="togglePasswordField('confirmPassword')">👁</button>
+                    </div>
+                    <span class="err-msg" id="confirm-err"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="registerBtn">Create Account</button>
+            
+            <p class="footer-link">Already have an account? <a href="login.html">Sign In</a></p>
+        </form>
+    </div>
+
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html> 

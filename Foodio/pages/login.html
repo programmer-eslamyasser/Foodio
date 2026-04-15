@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Foodio</title>
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body>
+
+    <div class="auth-card" style="max-width: 420px;">
+        <div class="logo">🍱 Foodio</div>
+        
+        <div class="header">
+            <h1 id="page-title">Welcome back</h1>
+            <p id="page-desc">Sign in to your account</p>
+        </div>
+
+        <div id="alert-box" class="alert hidden"></div>
+
+        <form id="loginForm" novalidate>
+            <div class="field">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+                <span class="err-msg" id="email-err"></span>
+            </div>
+
+            <div class="field" style="margin-bottom: 20px;">
+                <label>Password</label>
+                <div class="pw-wrap">
+                    <input type="password" id="password" placeholder="Enter your password">
+                    <button type="button" class="toggle-pw" onclick="togglePasswordField('password')">👁</button>
+                </div>
+                <span class="err-msg" id="password-err"></span>
+                <div style="text-align: left; margin-top: 2px;">
+                    <a href="#" id="showForgotBtn" class="forgot-link">Forgot password?</a>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="loginBtn">Sign In</button>
+            
+            <p class="footer-link" style="margin-top: 24px;">
+                Don't have an account? <a href="register.html">Sign Up</a>
+            </p>
+        </form>
+
+        <form id="verifyEmailForm" class="hidden" novalidate>
+            <div class="field">
+                <label>Email Address</label>
+                <input type="email" id="resetEmail" placeholder="example@gmail.com">
+                <span class="err-msg" id="resetEmail-err"></span>
+            </div>
+            <button type="submit" class="btn-primary" id="verifyBtn">Verify Email</button>
+            <p class="footer-link"><a href="#" class="back-to-login">Back to Login</a></p>
+        </form>
+
+        <form id="newPasswordForm" class="hidden" novalidate>
+            <div class="field">
+                <label>New Password</label>
+                <div class="pw-wrap">
+                    <input type="password" id="newPassword" placeholder="Minimum 8 characters">
+                    <button type="button" class="toggle-pw" onclick="togglePasswordField('newPassword')">👁</button>
+                </div>
+                <span class="err-msg" id="newPass-err"></span>
+            </div>
+            <div class="field">
+                <label>Confirm Password</label>
+                <div class="pw-wrap">
+                    <input type="password" id="confirmNewPassword" placeholder="Repeat password">
+                    <button type="button" class="toggle-pw" onclick="togglePasswordField('confirmNewPassword')">👁</button>
+                </div>
+                <span class="err-msg" id="confirmNewPass-err"></span>
+            </div>
+            <button type="submit" class="btn-primary" id="resetBtn">Update Password</button>
+            <p class="footer-link"><a href="#" class="back-to-login">Back to Login</a></p>
+        </form>
+
+    </div>
+
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>
